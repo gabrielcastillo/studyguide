@@ -10,26 +10,28 @@
 <script type="text/javascript" src="alias.js"></script>
 <script type="text/javascript">
   Ext.onReady(function(){
-  Ext.create("widget.MyPanel", {
-    renderTo: Ext.getBody();
+    
+    Ext.create("widget.mypanel", {
+      renderTo: Ext.getBody()
+    });
+
+    Ext.ClassManager.instantiateByAlias("widget.mypanel",{
+      renderTo: Ext.getBody()
+    });
+
+    Ext.ClassManager.instantiate("widget.mypanel",{
+      renderTo: Ext.getBody()
+    });
+
+    var win = Ext.create("Ext.window.Window",{
+      title: "Window",
+      width: 350,
+      height: 250,
+      items: [{xtype: 'mypanel'}]
+    });
+
+    win.show();
   });
-
-  Ext.ClassManager.instantiate('widtet.MyPanel',{
-    renderTo: getBody();
-  });
-
-  var win = Ext.create('Ext.window.Window', {
-    title : 'Window',
-    width: 350,
-    height: 250,
-    items: [{
-      xtype: 'MyPanel',
-    }]
-  });
-
-win.show();
-
-});
 </script>
 </head>
 <body>
