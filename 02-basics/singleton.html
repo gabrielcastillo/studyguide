@@ -7,29 +7,10 @@
 <link rel="stylesheet" type="text/css" href="../extjs-4.1.1/resources/css/ext-all.css">
 <!-- Importing the Ext JS library -->
 <script type="text/javascript" src="../extjs-4.1.1/ext-all-dev.js"></script>
-<script type="text/javascript" src="alias.js"></script>
+<script type="text/javascript" src="singleton.js"></script>
 <script type="text/javascript">
-  Ext.onReady(function(){
-  Ext.create("widget.MyPanel", {
-    renderTo: Ext.getBody();
-  });
-
-  Ext.ClassManager.instantiate('widtet.MyPanel',{
-    renderTo: getBody();
-  });
-
-  var win = Ext.create('Ext.window.Window', {
-    title : 'Window',
-    width: 350,
-    height: 250,
-    items: [{
-      xtype: 'MyPanel',
-    }]
-  });
-
-win.show();
-
-});
+  console.log(MyApp.Constants.BASE_PATH);
+  Ext.create("MyApp.Constants"); //Throws an error
 </script>
 </head>
 <body>

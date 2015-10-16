@@ -76,6 +76,8 @@ Ext.define('MyApp.single.Skater', {
     me.mohawk();
     me.camel();
     me.axel();
+    taky.mixins.spin.combination();
+    taky.mixins.jump.combination();
     me.spreadeagle();
     me.scratch();
     console.log(me.name + " ends  the program and gets first place!");
